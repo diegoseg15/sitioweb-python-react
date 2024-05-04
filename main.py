@@ -15,7 +15,7 @@ def Item(text, initial_done=False):
     def handle_click(event):
         set_done(not done)
     
-    attrs = {"class":"bg-green-600 text-white py-4 px-5 font-semibold border-b-2"} if done else {"class":"flex space-x-5 items-center py-4 px-5 border-b-2"}
+    attrs = {"class":"bg-green-600 text-white py-4 px-5 font-semibold rounded-lg border-b-2"} if done else {"class":"flex space-x-5 items-center py-4 px-5 border-b-2"}
     
     if done:
         return html.li(attrs, text)
