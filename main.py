@@ -2,6 +2,12 @@ from reactpy import component, html, hooks
 from reactpy.backend.fastapi import configure
 from fastapi import FastAPI
 
+cdn_l = html.script (
+    {
+        "src":"https://cdn.tailwindcss.com"
+    }
+)
+
 @component
 def Item(text, initial_done=False):
     done, set_done = hooks.use_state(initial_done)
@@ -22,6 +28,7 @@ def Item(text, initial_done=False):
 @component
 def HelloWorld():
     return html._(
+        cdn_l,
         html.h1("Lista de Tareas"),
         html.ul(
             Item("Aprender React con Python 1"),
